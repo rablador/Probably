@@ -48,12 +48,12 @@ public struct Normal: RandomVariable {
     }
     
     public func probability(of x: Double) -> Double {
-        let denom = sqrt(2 * _variance * M_PI)
+        let denom = sqrt(2 * _variance * .pi)
         let rhs = exp(-(pow(x - _mean, 2) / (2 * _variance)))
         return (1 / denom) * rhs
     }
     
     public func distribution(lessThan x: Double) -> Double {
-        return (1.0 + erf((x - _mean) / (standardDeviation() * M_SQRT2))) / 2.0
+        return (1.0 + erf((x - _mean) / (standardDeviation() * 2.squareRoot()))) / 2.0
     }
 }

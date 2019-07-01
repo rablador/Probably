@@ -39,7 +39,7 @@ public extension RandomVariable where Interval == Int {
     /// - returns: The cumulative distribution of probability over the specified
     ///            interval.
     public func distribution(_ relation: Relation<Interval>) -> Double {
-        return CountableRange(relation.range(min: min, max: max)).reduce(0) { d, x in
+        return relation.range(min: min, max: max).reduce(0) { d, x in
             d + probability(of: x)
         }
     }

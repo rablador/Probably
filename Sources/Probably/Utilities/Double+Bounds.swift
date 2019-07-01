@@ -3,7 +3,7 @@ import Foundation
 extension Double {
 	/// The upper limit of the `Double` type.
 	public static var max : Double {
-		return DBL_MAX
+		return .greatestFiniteMagnitude
 	}
 }
 

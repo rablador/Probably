@@ -8,7 +8,6 @@ import Foundation
 /// those explicit probabilities.
 struct Discrete<ValueContainer>: RandomVariable, Transformable
     where ValueContainer: RandomAccessCollection,
-          ValueContainer.IndexDistance == Int,
           ValueContainer.Index == Int,
           ValueContainer.Iterator.Element == Double {
     let min = 0
